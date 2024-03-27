@@ -1,5 +1,3 @@
-Comment installer l'application ?
-
 L'objectif de cette application
 
 L'objectif de cette application est d'automatiser la gestion d'une pépinière en permettant au pépiniériste d'ajouter, de modifier et de supprimer des plantes de l'inventaire, d'enregistrer les ventes avec des détails pertinents tels que la date, le client et la quantité, de générer des rapports détaillés sur les niveaux d'inventaire, et d'automatiser le processus de gestion des commandes. La structure de l'application comprend plusieurs parties :
@@ -11,3 +9,5 @@ Enregistrement des ventes : Permet de saisir les ventes en indiquant la date, le
 Gestion des retours et des annulations de ventes : Assure la mise à jour automatique de l'inventaire en cas de retour ou d'annulation de ventes.
 
 En reformulant et corrigeant le texte, nous clarifions les objectifs et les fonctionnalités de l'application de manière plus concise et précise.
+
+
