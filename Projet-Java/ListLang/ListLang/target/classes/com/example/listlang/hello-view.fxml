@@ -206,7 +206,7 @@
                   <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <ListView fx:id="taskList1" layoutX="9.0" layoutY="14.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="537.0" prefWidth="970.0" />
-                        <Button fx:id="btnVendre1" layoutX="430.0" layoutY="257.0" mnemonicParsing="false" onAction="#vendrePlantes" text="Quitter l'application">
+                        <Button fx:id="btnVendre1" layoutX="430.0" layoutY="257.0" mnemonicParsing="false" onAction="#quitter" text="Quitter l'application">
                            <padding>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </padding>

@@ -29,4 +29,11 @@ public class PasswordHasher {
             return null;
         }
     }
+
+    public static void main(String[] args) {
+        // Exemple d'utilisation de la méthode hashPassword
+        String password = "mot_de_passe_a_hasher";
+        String hashedPassword = hashPassword(password);
+        System.out.println("Mot de passe hashé : " + hashedPassword);
+    }
 }

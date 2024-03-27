@@ -1,5 +1,6 @@
 package com.example.listlang;
 
+import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -190,6 +191,12 @@ public class HelloController implements Initializable {
     @FXML
     protected void addTask() {
         // Méthode pour ajouter une tâche
+    }
+
+    @FXML
+    protected void quitter() {
+        // Méthode pour quitter l'application
+        Platform.exit(); // Cette ligne permet de fermer l'application
     }
 
     @FXML
