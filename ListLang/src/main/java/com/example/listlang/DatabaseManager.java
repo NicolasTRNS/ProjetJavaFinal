@@ -21,36 +21,14 @@ public class DatabaseManager {
 
             return hexString.toString();
         } catch (NoSuchAlgorithmException e) {
+            //noinspection CallToPrintStackTrace
             e.printStackTrace();
             return null;
         }
     }
 
-    // Méthode pour vérifier les informations d'identification
-    public static boolean verifyCredentials(String username, String password) {
-        // Connectez-vous à la base de données et vérifiez les informations d'identification
-        try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/javafx", "root", "password");
-            PreparedStatement statement = connection.prepareStatement("SELECT password FROM users WHERE username = ?");
-            statement.setString(1, username);
-            ResultSet resultSet = statement.executeQuery();
-
-            if (resultSet.next()) {
-                String hashedPassword = resultSet.getString("password");
-                String hashedInputPassword = hashPassword(password);
-                return hashedInputPassword.equals(hashedPassword);
-            }
-
-            connection.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return false;
-    }
-
     // Méthode pour enregistrer un nouvel utilisateur
-    public static void registerUser(String username, String password) {
+     static void registerUser(String username, String password) {
         // Connectez-vous à la base de données et enregistrez les informations d'identification
         try {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/javafx", "root", "password");
@@ -60,6 +38,7 @@ public class DatabaseManager {
             statement.executeUpdate();
             connection.close();
         } catch (SQLException e) {
+            //noinspection CallToPrintStackTrace
             e.printStackTrace();
         }
     }
