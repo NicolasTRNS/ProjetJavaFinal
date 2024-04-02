@@ -2,14 +2,15 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le : mer. 10 jan. 2024 à 17:27
--- Version du serveur : 10.4.28-MariaDB
--- Version de PHP : 8.2.4
+-- Hôte : localhost:3306
+-- Généré le : mar. 02 avr. 2024 à 10:14
+-- Version du serveur : 8.0.30
+-- Version de PHP : 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -17,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `javafx`
+-- Base de données : `projet_java_db`
 --
 
 -- --------------------------------------------------------
@@ -26,19 +27,19 @@ SET time_zone = "+00:00";
 -- Structure de la table `clients`
 --
 
-DROP TABLE IF EXISTS `clients`;  -- Suppression de la table si elle existe déjà
-
 CREATE TABLE `clients` (
-                           `id` int(11) NOT NULL AUTO_INCREMENT,
-                           `name` varchar(255) NOT NULL,
-                           PRIMARY KEY (`id`)
+                           `id` int NOT NULL,
+                           `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Insertion des données initiales pour les noms de clients
-INSERT INTO `clients` (`name`) VALUES
-                                   ('Sofia Ramirez'),
-                                   ('Xavier Johnson'),
-                                   ('Jasmine Patel');
+--
+-- Déchargement des données de la table `clients`
+--
+
+INSERT INTO `clients` (`id`, `name`) VALUES
+                                         (1, 'Sofia Ramirez'),
+                                         (2, 'Xavier Johnson'),
+                                         (3, 'Jasmine Patel');
 
 -- --------------------------------------------------------
 
@@ -46,19 +47,19 @@ INSERT INTO `clients` (`name`) VALUES
 -- Structure de la table `emails`
 --
 
-DROP TABLE IF EXISTS `emails`;  -- Suppression de la table si elle existe déjà
-
 CREATE TABLE `emails` (
-                          `id` int(11) NOT NULL AUTO_INCREMENT,
-                          `email` varchar(255) NOT NULL,
-                          PRIMARY KEY (`id`)
+                          `id` int NOT NULL,
+                          `email` varchar(255) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Insertion des données initiales pour les adresses e-mail
-INSERT INTO `emails` (`email`) VALUES
-                                   ('sofia.ramirez@gmail.com'),
-                                   ('xavier.johnson@gmail.com'),
-                                   ('jasmine.pastel@gmail.com');
+--
+-- Déchargement des données de la table `emails`
+--
+
+INSERT INTO `emails` (`id`, `email`) VALUES
+                                         (1, 'sofia.ramirez@gmail.com'),
+                                         (2, 'xavier.johnson@gmail.com'),
+                                         (3, 'jasmine.pastel@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -66,19 +67,19 @@ INSERT INTO `emails` (`email`) VALUES
 -- Structure de la table `plants`
 --
 
-DROP TABLE IF EXISTS `plants`;  -- Suppression de la table si elle existe déjà
-
 CREATE TABLE `plants` (
-                          `id` int(11) NOT NULL AUTO_INCREMENT,
-                          `plant_name` varchar(255) NOT NULL,
-                          PRIMARY KEY (`id`)
+                          `id` int NOT NULL,
+                          `plant_name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Insertion des données initiales pour les noms de plantes
-INSERT INTO `plants` (`plant_name`) VALUES
-                                        ('Géranium'),
-                                        ('Rosier'),
-                                        ('Cactus');
+--
+-- Déchargement des données de la table `plants`
+--
+
+INSERT INTO `plants` (`id`, `plant_name`) VALUES
+                                              (1, 'Géranium'),
+                                              (2, 'Rosier'),
+                                              (3, 'Cactus');
 
 -- --------------------------------------------------------
 
@@ -86,22 +87,172 @@ INSERT INTO `plants` (`plant_name`) VALUES
 -- Structure de la table `quantities`
 --
 
-DROP TABLE IF EXISTS `quantities`;  -- Suppression de la table si elle existe déjà
-
 CREATE TABLE `quantities` (
-                              `id` int(11) NOT NULL AUTO_INCREMENT,
-                              `quantity` int(11) NOT NULL,
-                              PRIMARY KEY (`id`)
+                              `id` int NOT NULL,
+                              `quantity` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Insertion des données initiales pour les quantités de plantes
-INSERT INTO `quantities` (`quantity`) VALUES
-                                          (1),
-                                          (2),
-                                          (3),
-                                          (4),
-                                          (5);
+--
+-- Déchargement des données de la table `quantities`
+--
 
+INSERT INTO `quantities` (`id`, `quantity`) VALUES
+                                                (1, 1),
+                                                (2, 2),
+                                                (3, 3),
+                                                (4, 4),
+                                                (5, 5);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `tasks`
+--
+
+CREATE TABLE `tasks` (
+                         `id` int NOT NULL,
+                         `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+                         `is_active` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `users`
+--
+
+CREATE TABLE `users` (
+                         `id` int NOT NULL,
+                         `username` varchar(255) NOT NULL,
+                         `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`) VALUES
+                                                       (56, 'erer@gmail.com', 'efeesf'),
+                                                       (57, 'dsiuvsefiusef@gmail.com', 'efeezfefzezf'),
+                                                       (58, 'risjthrth@gmail.com', 'sefsefsef'),
+                                                       (59, 'dgrhgydhrg@gmail.com', 'sefsefse'),
+                                                       (60, 'oise@gmail.com', 'ssefsef'),
+                                                       (61, 'dgrrgrg@gmail.com', 'seesfse'),
+                                                       (92, 'z', 'z'),
+                                                       (93, 'j', 'j'),
+                                                       (94, 'b', 'b'),
+                                                       (95, 'm', 'm'),
+                                                       (96, 'm', 'm'),
+                                                       (97, 'm', 'm'),
+                                                       (98, 'g', 'g'),
+                                                       (99, 'g', 'g'),
+                                                       (100, 'f', 'f'),
+                                                       (101, 'dzd', 'dzd'),
+                                                       (102, 'dzd', 'dzd'),
+                                                       (103, 'dzd', 'dzd'),
+                                                       (104, 'd', 'd'),
+                                                       (105, 'd', 'd'),
+                                                       (106, 'd', 'd'),
+                                                       (107, 'z', 'z'),
+                                                       (108, 'z', 'z'),
+                                                       (109, 'a', 'a'),
+                                                       (110, '2000', '2000'),
+                                                       (111, 'pp', '^^'),
+                                                       (112, 'p', 'p'),
+                                                       (113, '0', '0'),
+                                                       (114, 'g', 'g'),
+                                                       (115, 'r', 'r'),
+                                                       (116, 'r', 'r'),
+                                                       (117, 'j', 'j'),
+                                                       (118, 'j', 'j'),
+                                                       (119, 'f', 'f'),
+                                                       (120, 'g', 'g'),
+                                                       (121, 'r', 'r'),
+                                                       (122, 'j', 'j'),
+                                                       (123, 'yth', 'rtybh'),
+                                                       (124, 'rgrtg', 'rtgrtg'),
+                                                       (125, 'yuj', 'yujy'),
+                                                       (126, 'efe', 'fef');
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `clients`
+--
+ALTER TABLE `clients`
+    ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `emails`
+--
+ALTER TABLE `emails`
+    ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `plants`
+--
+ALTER TABLE `plants`
+    ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `quantities`
+--
+ALTER TABLE `quantities`
+    ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `tasks`
+--
+ALTER TABLE `tasks`
+    ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `users`
+--
+ALTER TABLE `users`
+    ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `clients`
+--
+ALTER TABLE `clients`
+    MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT pour la table `emails`
+--
+ALTER TABLE `emails`
+    MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT pour la table `plants`
+--
+ALTER TABLE `plants`
+    MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT pour la table `quantities`
+--
+ALTER TABLE `quantities`
+    MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT pour la table `tasks`
+--
+ALTER TABLE `tasks`
+    MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `users`
+--
+ALTER TABLE `users`
+    MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=127;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
